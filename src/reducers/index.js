@@ -4,5 +4,5 @@ import SelectionReducer from './SelectionReducer';
 
 export default combineReducers({
   friends: FriendReducer,
-  selectedLibraryId: SelectionReducer
+  selectedFriendId: SelectionReducer
 });

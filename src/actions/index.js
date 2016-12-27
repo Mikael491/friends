@@ -1,6 +1,6 @@
 export const selectedFriend = (friendId) => {
   return {
-    type: 'select-freind',
+    type: 'select-friend',
     payload: friendId
   };
 };
