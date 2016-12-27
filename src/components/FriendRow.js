@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import { CardSection } from './common';
 import { connect } from 'react-redux';
 import * as actions from './../actions'
 
 class FriendRow extends Component {
   render() {
-    console.log(this.props)
+    const { id, name, description } = this.props.friendToDisplay;
     return (
-      <CardSection>
-        <Text>{this.props.friendToDisplay.name}</Text>
-      </CardSection>
+      <TouchableWithoutFeedback
+        onPress={() => this.props.selectedFriend(id)}
+      >
+        <View>
+          <CardSection>
+            <Text>{name}</Text>
+          </CardSection>
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
