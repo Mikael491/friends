@@ -9,7 +9,7 @@ import FriendList from './components/FriendList';
 const App = () => {
   return (
     <Provider store={createStore(reducers)}>
-      <View>
+      <View style={{ flex: 1 }}>
         <Header headerText={'Friends'} />
         <FriendList />
       </View>
