@@ -6,7 +6,8 @@ import * as actions from './../actions';
 
 class FriendRow extends Component {
   renderDescription(description) {
-    if (this.props.friendToDisplay.id === this.props.selectedFriendId) {
+    const { expanded } = this.props;
+    if (expanded) {
       return (
           <Text>{description}</Text>
       );
@@ -30,8 +31,9 @@ class FriendRow extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { selectedFriendId: state.selectedFriendId };
+const mapStateToProps = (state, ownProps) => {
+  const expanded = ownProps.friendToDisplay.id === state.selectedFriendId;
+  return { expanded };
 };
 
 export default connect(mapStateToProps, actions)(FriendRow);
